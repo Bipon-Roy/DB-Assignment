@@ -27,3 +27,26 @@ CREATE TABLE product_category (
   modified_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
   deleted_at DATETIME DEFAULT NULL
 );
+
+-- Schema for product_inventory table
+
+CREATE TABLE product_inventory (
+  id INT PRIMARY KEY AUTO_INCREMENT,  -- 
+  quantity INT NOT NULL, 
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  modified_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  deleted_at DATETIME DEFAULT NULL,
+);
+
+-- Schema for discount table
+
+CREATE TABLE discount (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  name VARCHAR(255) NOT NULL,
+  desc TEXT,
+  discount_percent DECIMAL(5,2) NOT NULL,  
+  active BOOLEAN DEFAULT FALSE,  
+  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+  modified_at DATETIME DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  deleted_at DATETIME DEFAULT NULL
+);
